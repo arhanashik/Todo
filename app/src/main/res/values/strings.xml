@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">To-do</string>
+
+    <string name="label_details">Details</string>
+    <string name="label_add_todo">Add Todo</string>
+    <string name="label_switch_account">Switch account</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_no_todo_list_found">No to-do list found</string>
+    <string name="label_clear_completed_task">Clear completed task</string>
+    <string name="label_edit_todo">Edit</string>
+    <string name="label_update_todo">Update todo</string>
+    <string name="label_add">Add</string>
+    <string name="label_delete">Delete</string>
+    <string name="label_clear_completed">Clear completed</string>
+
+    <string name="hint_todo">Todo</string>
+    <string name="hint_date">Date</string>
+
+    <string name="text_are_you_sure">Are you sure?</string>
+
+    <string name="no_internet_connection_exception">No internet connection</string>
+    <string name="sign_in_required_exception">Please sign in to continue!</string>
+    <string name="unknown_exception">Opps! Something went wrong</string>
+    <string name="no_completed_task_found_exception">You\'ve no completed tasks to clear!</string>
+
+    <string name="switch_account_warning">
+        You will be logged out from your current account. Don\'t worry, you can always comeback.
+    </string>
+    <string name="clear_completed_tasks_warning">All completed tasks will be removed</string>
+    <string name="todo_delete_warning">Warning: this task will be deleted permanently!</string>
+
+    <string name="description_ic_no_data" translatable="false">No data</string>
+    <string name="description_img_profile" translatable="false">Profile Image</string>
+    <string name="description_ic_edit" translatable="false">Edit Icon</string>
+    <string name="description_ic_delete" translatable="false">Delete Icon</string>
+    <string name="description_ic_mark_as_complete" translatable="false">icon mark as complete</string>
+
+    <string name="add_todo_success_message">Task added successfully!</string>
+    <string name="update_todo_success_message">Task updated successfully!</string>
+    <string name="delete_todo_success_message">Task deleted successfully!</string>
+    <string name="clear_completed_tasks_success_message">All completed tasks cleared successfully!</string>
+    <string name="task_marked_as_completed_success_message">Task marked as completed</string>
+    <string name="task_marked_as_incomplete_success_message">Task marked as incomplete!</string>
+
+</resources>
