@@ -18,6 +18,7 @@ Users can sign up with email and password or can continue with google.
 - Edit incomplete tasks
 - Delete completed task(s)
 - Tasks can be marked as completed/incomplete
+- **Real time update**
 
 ## Project structure
 - The root folder of the kotlin codes are `todo`
