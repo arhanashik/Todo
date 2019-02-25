@@ -14,10 +14,14 @@ Users can sign up with email and password or can continue with google.
 ## Features
 - Continue with google
 - Sign up with email and password
+- Simple user profile
 - Create to-do with title and date
 - Edit incomplete tasks
-- Delete completed task(s)
-- Tasks can be marked as completed/incomplete
+- Delete completed/incomplete task(s)
+- Mark any task as completed/incomplete
+- **Bulk update and delete tasks**
+- Filter to-do list based on login user
+- Switch account easily
 - **Real time update**
 
 ## Project structure
