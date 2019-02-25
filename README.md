@@ -9,7 +9,7 @@ It's a simple but complete to-do app which was built using:
 - firebase auth UI and
 - firestore
 
-Users can sign up with email and password or can continue with google.
+Users can sign up with email and password or can continue with google and can manage their to-do list with it.
 
 ## Features
 - Continue with google

@@ -89,6 +89,7 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$rootProject.glide"
     annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide"
 
+    // logging lib
     implementation "com.jakewharton.timber:timber:$rootProject.timber"
 }
 
