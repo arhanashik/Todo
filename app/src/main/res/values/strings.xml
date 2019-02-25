@@ -12,6 +12,7 @@
     <string name="label_add">Add</string>
     <string name="label_delete">Delete</string>
     <string name="label_clear_completed">Clear completed</string>
+    <string name="label_mark_all_as_complete">Mark all as complete</string>
 
     <string name="hint_todo">Todo</string>
     <string name="hint_date">Date</string>
@@ -21,11 +22,13 @@
     <string name="no_internet_connection_exception">No internet connection</string>
     <string name="sign_in_required_exception">Please sign in to continue!</string>
     <string name="unknown_exception">Opps! Something went wrong</string>
+    <string name="no_incomplete_task_found_exception">You\'ve no incomplete tasks to update!</string>
     <string name="no_completed_task_found_exception">You\'ve no completed tasks to clear!</string>
 
     <string name="switch_account_warning">
         You will be logged out from your current account. Don\'t worry, you can always comeback.
     </string>
+    <string name="complete_all_tasks_warning">All incomplete tasks will be marked as completed</string>
     <string name="clear_completed_tasks_warning">All completed tasks will be removed</string>
     <string name="todo_delete_warning">Warning: this task will be deleted permanently!</string>
 
@@ -38,6 +41,7 @@
     <string name="add_todo_success_message">Task added successfully!</string>
     <string name="update_todo_success_message">Task updated successfully!</string>
     <string name="delete_todo_success_message">Task deleted successfully!</string>
+    <string name="update_incomplete_tasks_success_message">All incomplete tasks marked as completed!</string>
     <string name="clear_completed_tasks_success_message">All completed tasks cleared successfully!</string>
     <string name="task_marked_as_completed_success_message">Task marked as completed</string>
     <string name="task_marked_as_incomplete_success_message">Task marked as incomplete!</string>

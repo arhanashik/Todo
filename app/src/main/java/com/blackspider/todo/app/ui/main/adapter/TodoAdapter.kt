@@ -40,6 +40,15 @@ class TodoAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return listOfTodo
     }
 
+    fun getIncompleteTodoList(): ArrayList<TodoEntity> {
+        val incompleteList = ArrayList<TodoEntity>()
+        listOfTodo.forEach {
+            if(!it.completed) incompleteList.add(it)
+        }
+
+        return incompleteList
+    }
+
     fun getCompletedTodoList(): ArrayList<TodoEntity> {
         val completedList = ArrayList<TodoEntity>()
         listOfTodo.forEach {

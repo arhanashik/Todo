@@ -5,11 +5,20 @@
             android:id="@+id/action_account"
             android:icon="@drawable/ic_account"
             android:title="@string/label_switch_account"
-            app:showAsAction="always"/>
+            app:showAsAction="always"
+            android:orderInCategory="100"/>
+
+    <item
+            android:id="@+id/action_complete_all_task"
+            android:icon="@drawable/ic_done_all_white"
+            android:title="@string/label_mark_all_as_complete"
+            app:showAsAction="ifRoom"
+            android:orderInCategory="101"/>
 
     <item
             android:id="@+id/action_clear_completed_task"
             android:icon="@drawable/ic_clear_all"
             android:title="@string/label_clear_completed_task"
-            app:showAsAction="ifRoom"/>
+            app:showAsAction="ifRoom"
+            android:orderInCategory="102"/>
 </menu>

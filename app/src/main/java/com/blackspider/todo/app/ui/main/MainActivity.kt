@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity(), AuthHelper {
     private val adapter = TodoAdapter()
 
     // menu for clearing all completed tasks at once
+    private var completeAllMenu: MenuItem? = null
     private var clearCompletedMenu: MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,7 +115,9 @@ class MainActivity : AppCompatActivity(), AuthHelper {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        clearCompletedMenu = menu!!.getItem(1)
+        completeAllMenu = menu?.getItem(1)
+        clearCompletedMenu = menu?.getItem(2)
+        completeAllMenu?.isVisible = currentUserEntity != null
         clearCompletedMenu?.isVisible = currentUserEntity != null
         return super.onCreateOptionsMenu(menu)
     }
@@ -132,6 +135,10 @@ class MainActivity : AppCompatActivity(), AuthHelper {
                         .create()
                         .show()
                 }
+            }
+            R.id.action_complete_all_task -> {
+                // mark all incomplete task as complete
+                completeAllTasks()
             }
             R.id.action_clear_completed_task -> {
                 //clear complete tasks
@@ -341,7 +348,42 @@ class MainActivity : AppCompatActivity(), AuthHelper {
             .show()
     }
 
-    // bulk clear all completed todo items
+    // bulk update all incomplete todoItems
+    private fun completeAllTasks() {
+        if(currentUserEntity == null) { signIn(this); return }
+
+        if(adapter.getIncompleteTodoList().size == 0) {
+            Toaster(this).showToast(getString(R.string.no_incomplete_task_found_exception))
+            return
+        }
+
+        AlertDialog.Builder(this)
+            .setTitle(R.string.text_are_you_sure)
+            .setMessage(R.string.complete_all_tasks_warning)
+            .setPositiveButton(R.string.label_mark_all_as_complete) { _,_->
+                swipe_refresh.isRefreshing = true
+                val incompleteList = ArrayList<TodoEntity>()
+                incompleteList.addAll(adapter.getIncompleteTodoList())
+                incompleteList.forEach { it.completed = true }
+                remote.markTodoListAsComplete(incompleteList, object: TodoListCallback {
+                    override fun onResponse(todoList: ArrayList<TodoEntity>?, error: String?) {
+                        swipe_refresh.isRefreshing = false
+                        if (error != null) {
+                            Toaster(this@MainActivity).showToast(error)
+                        }else {
+                            Toaster(this@MainActivity).showToast(
+                                getString(R.string.update_incomplete_tasks_success_message)
+                            )
+                        }
+                    }
+                })
+            }
+            .setNegativeButton(R.string.label_cancel) { _,_-> }
+            .create()
+            .show()
+    }
+
+    // bulk delete all completed todoItems
     private fun clearCompletedTasks() {
         if(currentUserEntity == null) { signIn(this); return }
 
@@ -417,6 +459,7 @@ class MainActivity : AppCompatActivity(), AuthHelper {
 
     // update the profile info and the empty data view
     private fun updateStatus() {
+        completeAllMenu?.isVisible = currentUserEntity != null
         clearCompletedMenu?.isVisible = currentUserEntity != null
 
         if(currentUserEntity == null) {
